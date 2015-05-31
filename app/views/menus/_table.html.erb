@@ -1,0 +1,33 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Item</th>
+        <th>Num of Orders</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- loop -->
+      <% @items.each_with_index do |item, i| %>
+        <% image_id = item['image']['fileName'] %>
+        <tr>
+          <td><%= "#{i + 1}" %></td>
+          <td>
+            <img class="img-responsive img-thumbnail img-resize" src="https://api.appery.io/rest/1/db/files/5476a8c5e4b05e4a44a69b0e/<%= image_id %>">
+          </td>
+          <td><%= item['item'] %></td>
+          <td><%= item['num_orders'] %></td>
+          <td><%= item['price'] %></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
+
+
+ 
