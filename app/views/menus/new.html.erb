@@ -1,0 +1,27 @@
+<h1>NEW MENU PAGE</h1>
+
+<%= form_tag '/menus' do %>
+
+	<%= label_tag :item %>
+	<%= text_field_tag :item %>
+
+	<br><br>
+
+	<%= label_tag "List id" %>
+	<%= text_field_tag :listid %>
+
+	<br><br>
+
+	<%= label_tag :price %>
+	<%= text_field_tag :price %>
+
+	<br><br>
+
+	<%= label_tag "Num orders" %>
+	<%= text_field_tag :num_orders %>
+
+	<br><br>
+
+	<%= submit_tag 'Submit' %>
+
+<% end %>
