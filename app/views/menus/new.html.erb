@@ -1,27 +1,37 @@
-<h1>NEW MENU PAGE</h1>
+<div class="jumbotron">
+  <h1 class="text-center">Add New Item</h1>
+</div>
 
-<%= form_tag '/menus' do %>
+<div class="row">
+  <div class="col-md-6 .col-sm-6 .col-xs-6 col-md-offset-3">
 
-	<%= label_tag :item %>
-	<%= text_field_tag :item %>
+		<%= form_tag '/menus' do %>
 
-	<br><br>
+			<div class="form-group">
+				<%= label_tag :item %>
+				<%= text_field_tag :item, nil, class: "form-control" %>
+			</div>
 
-	<%= label_tag "List id" %>
-	<%= text_field_tag :listid %>
+			<div class="form-group">
+				<%= label_tag "List id" %>
+				<%= text_field_tag :listid, nil, class: "form-control" %>
+			</div>
 
-	<br><br>
+			<div class="form-group">
+				<%= label_tag :price %>
+				<%= text_field_tag :price, nil, class: "form-control" %>
+			</div>
 
-	<%= label_tag :price %>
-	<%= text_field_tag :price %>
+			<div class="form-group">
+				<%= label_tag "Num orders" %>
+				<%= text_field_tag :num_orders, nil, class: "form-control" %>
+			</div>
 
-	<br><br>
+			<div class="form-group">
+				<%= submit_tag 'Submit', class: "btn btn-primary" %>
+			</div>
 
-	<%= label_tag "Num orders" %>
-	<%= text_field_tag :num_orders %>
+		<% end %>
 
-	<br><br>
-
-	<%= submit_tag 'Submit' %>
-
-<% end %>
+ 	</div>
+</div>
