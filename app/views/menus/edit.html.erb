@@ -1,0 +1,29 @@
+<h1>Edit Item</h1>
+
+<!-- grab params from specific item to edit -->
+<% @item = @items['item'] %></td>
+<% @num_orders = @items['num_orders'] %></td>
+<% @price = @items['price'] %></td>
+
+<%= form_tag '/menus/update' do %>
+
+	<div class="form-group">
+		<%= label_tag :item %>
+		<%= text_field_tag :item, "#{@item}", class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= label_tag :price %>
+		<%= text_field_tag :price, "#{@price}", class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= label_tag "Num orders" %>
+		<%= text_field_tag :num_orders, "#{@num_orders}", class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= submit_tag 'Submit', class: "btn btn-primary" %>
+	</div>
+
+<% end %>
