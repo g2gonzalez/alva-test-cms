@@ -19,12 +19,11 @@
           <% img_url = "http://placehold.it/150x100" %>
         <% else %>
           <% img_id = item['image']['fileName'] %>
-          <% puts img_id %>
-          <!-- something is wrong with the line below -->
           <% img_url = "https://api.appery.io/rest/1/db/files/5476a8c5e4b05e4a44a69b0e/#{img_id}" %>
         <% end %>
 
         <tr>
+          <!-- output retrieved data -->
           <td><%= "#{i + 1}" %></td>
           <td>
             <img class="img-responsive img-thumbnail img-resize" src="<%= img_url %>">
