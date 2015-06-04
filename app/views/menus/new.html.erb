@@ -5,33 +5,35 @@
 <div class="row">
   <div class="col-md-6 .col-sm-6 .col-xs-6 col-md-offset-3">
 
-		<%= form_tag '/menus' do %>
+		<%= form_for :menu do |f| %>
 
 			<div class="form-group">
-				<%= label_tag :item %>
-				<%= text_field_tag :item, nil, class: "form-control" %>
+				<%= f.label "Item" %><br>
+    		<%= f.text_field :item, class: "form-control" %>
 			</div>
 
 			<div class="form-group">
-				<%= label_tag "List id" %>
-				<%= text_field_tag :listid, nil, class: "form-control" %>
+				<%= f.label "List id" %><br>
+    		<%= f.text_field :listid, class: "form-control" %>
 			</div>
 
 			<div class="form-group">
-				<%= label_tag :price %>
-				<%= text_field_tag :price, nil, class: "form-control" %>
+				<%= f.label "Number of Orders" %><br>
+    		<%= f.text_field :num_orders, class: "form-control" %>
 			</div>
 
 			<div class="form-group">
-				<%= label_tag "Num orders" %>
-				<%= text_field_tag :num_orders, nil, class: "form-control" %>
+				<%= f.label "Price" %><br>
+    		<%= f.text_field :price, class: "form-control" %>
 			</div>
 
 			<div class="form-group">
-				<%= submit_tag 'Submit', class: "btn btn-primary" %>
+				<%= f.submit "Add item", class: "btn btn-primary" %>
 			</div>
 
 		<% end %>
 
  	</div>
 </div>
+
+

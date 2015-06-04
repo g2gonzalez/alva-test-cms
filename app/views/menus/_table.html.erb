@@ -31,7 +31,8 @@
           <td><%= item['item'] %></td>
           <td><%= item['num_orders'] %></td>
           <td><%= item['price'] %></td>
-          <td><%= link_to "Edit item", menus_edit_path, class: "btn btn-primary btn-sm" %></td>
+          <% item_id = item['_id'] %>
+          <td><%= link_to "Edit item", edit_menu_path("#{item_id}"), class: "btn btn-primary btn-sm" %></td>
         </tr>
       <% end %>
 
