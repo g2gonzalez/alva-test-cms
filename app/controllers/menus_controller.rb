@@ -35,8 +35,8 @@ class MenusController < ApplicationController
 		# post request to add new item
 		base_url = "https://api.appery.io/rest/1/db/collections/Menu/"
 
-		response = HTTParty.post(base_url, 
-			:body => {"item" => "#{item}", "listid" => "#{list_id}", "price" => "#{price}", "num_orders" => "#{num_orders}"}.to_json, 
+		response = HTTParty.post(base_url,
+			:body => {"item" => "#{item}", "listid" => "#{list_id}", "price" => "#{price}", "num_orders" => "#{num_orders}"}.to_json,
 			:headers => {"X-Appery-Database-Id" => "5476a8c5e4b05e4a44a69b0e",
 				"Content-Type" => "application/json"})
 
@@ -55,8 +55,8 @@ class MenusController < ApplicationController
 		# put request to add new item
 		base_url = "https://api.appery.io/rest/1/db/collections/Menu/#{id}"
 
-		response = HTTParty.put(base_url, 
-			:body => {"item" => "#{item}", "listid" => "list_id", "num_orders" => "num_orders", "price" => "price"}.to_json, 
+		response = HTTParty.put(base_url,
+			:body => {"item" => "#{item}", "listid" => "list_id", "num_orders" => "num_orders", "price" => "price"}.to_json,
 			:headers => {"X-Appery-Database-Id" => "5476a8c5e4b05e4a44a69b0e",
 				"Content-Type" => "application/json"})
 
@@ -64,7 +64,16 @@ class MenusController < ApplicationController
 		redirect_to '/'
 	end
 
-	def delete
+	def destroy
+		#grab item information that needs to be deleted
+  		id = params[:id]
+  		base_url = "https://api.appery.io/rest/1/db/collections/Menu/#{id}"
+
+  		HTTParty.delete(base_url, :body => {"id" => "#{id}"}.to_json,
+			:headers => {"X-Appery-Database-Id" => "5476a8c5e4b05e4a44a69b0e",
+				"Content-Type" => "application/json"})
+
+  		redirect_to '/'
 	end
 
 end
@@ -74,9 +83,9 @@ end
 
 #https://api.appery.io/rest/1/db/collections/Drinks/
 
-# response = post(Accounts.root_url+"/sobjects/Account/", 
+# response = post(Accounts.root_url+"/sobjects/Account/",
 #   :body => {:name => "graham"}.to_json,
 #   :headers => {'Content-Type' => 'application/json'} )
 
-#556d473fe4b0b40eb778a1ab 
+#556d473fe4b0b40eb778a1ab
 

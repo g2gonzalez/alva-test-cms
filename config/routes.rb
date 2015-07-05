@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/drinks' => 'drinks#index'
   # update form data path
   post '/menus/update' => 'menus#update'
- 
+
   resources :menus
 end
