@@ -1,5 +1,7 @@
 class MenusController < ApplicationController
 
+	before_filter :authorize
+
 	def index
 		base_url = "https://api.appery.io/rest/1/db/collections/Menu/"
 
